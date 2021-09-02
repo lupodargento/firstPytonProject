@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-7 text-left">
+
+            <div class="card border-primary mb-3">
+
+                <div class="card-header bg-transparent border-primary">
+                    {% block title %} Dettagli di {{ person.Nome1 }} {{ person.Cognome1 }} {% endblock %}
+                </div>
+
+                <div class="card-body text-primary">
+                    <p class="card-text">        Nome 1: {{ person.Nome1}}<br>
+                        Nome 2: {{ person.Nome2}}<br>
+                        Nome 3: {{ person.Nome3}}<br>
+                        Cognome 1: {{ person.Cognome1}}<br>
+                        Cognome 2: {{ person.Cognome2}}<br>
+                        Cognome 3: {{ person.Cognome3}}<br>
+                        Codice fiscale: {{ person.CodiceFiscale}}
+                    </p>
+                </div>
+
+                <div class="card-footer bg-transparent border-primary">
+                    <a class="btn btn-outline-primary btn-sm" href="{{ url_for('index')}}" role="button">Torna elenco nominativi</a>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

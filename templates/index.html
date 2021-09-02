@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    lista nominativi
+{% endblock %}
+
+
+{% block content %}
+    {% for person in people %}
+
+        <div class="row justify-content-center">
+            <div class="col-md-10 col-lg-7 text-left">
+                <div class="alert alert-primary" role="alert">
+                    <p>
+                        <i class="bi bi-person" style="font-size: 20px;"></i>
+                    </p>
+
+                    <hr>
+
+                    <p>
+                        Nome : {{ person.Nome1}}<br>
+                        Cognome : {{ person.Cognome1}}<br>
+                    </p>
+
+                    <hr>
+
+                    <form id="" action="{{ url_for('delete', id=person.idDatiAnagrafici) }}" method="POST">
+                        <a class="btn btn-outline-primary btn-sm" href="{{ url_for('person', person_id=person.idDatiAnagrafici) }}" role="button">
+                            <i class="bi bi-file-earmark-richtext" style="font-size: 16px;"></i>
+                             Apri dettagli
+                        </a>
+
+                        <a class="btn btn-outline-primary btn-sm" href="{{ url_for('edit', id=person.idDatiAnagrafici) }}" role="button">
+                            <i class="bi bi-pencil" style="font-size: 16px;"></i>
+                             Modifica
+                        </a>
+
+                        <button type="submit" value="Submit" class="btn btn-outline-danger btn-sm" onclick="return confirm('Si conferma la cancellazione del nominativo?')">
+                            <i class="bi bi-person-x" style="font-size: 16px;"></i>
+                             Elimina
+                        </button>
+
+                    </form>
+
+                </div>
+            </div>
+        </div>
+
+    {% endfor %}
+{% endblock %}

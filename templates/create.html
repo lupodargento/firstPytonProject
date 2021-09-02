@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<form method="post">
+
+    <div class="row justify-content-center">
+        <div class="col-md-10 col-lg-7 text-left">
+
+            <h4>{% block title %}Inserimento nuovo nominativo{% endblock %}</h4>
+
+            <div class="form-group">
+                <label for="nome1">Inserire il primo nome</label>
+                <input type="text" name="nome1"
+                        placeholder="prego inserire il primo Nome" class="form-control"
+                        value="{{ request.form['nome1'] }}">
+                </input>
+            </div>
+
+            <div class="form-group">
+                <label for="cognome1">Inserire il primo cognome</label>
+                <input type="text" name="cognome1"
+                        placeholder="prego inserire il primo Cognome" class="form-control"
+                        value="{{ request.form['cognome1'] }}">
+                </input>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-outline-primary btn-sm">
+                    <i class="bi bi-save2" style="font-size: 16px;"></i>
+                     Conferma
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+</form>
+{% endblock %}

@@ -1,0 +1,9 @@
+/* ************************************
+	Sezione generale <html>, <body>
+   ************************************ */
+
+html, body {
+    height: 100%;
+    padding-top: 30px;
+    background: #eeeeee;
+}
